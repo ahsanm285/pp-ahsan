@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Monochrome Elegant</title>
+    <style>
+        body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    /* BACKGROUND GALAXY */
+    background-image: url('galaxy.jpg'); /* ganti sesuai nama file */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+        header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #2b2b2b;
+            backdrop-filter: blur(6px);
+            position: sticky;
+            top: 0;
+            background: rgba(0,0,0,0.4);
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+        nav a {
+            margin-left: 20px;
+            color: #eee;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: 300;
+        }
+        nav a:hover {
+            color: #aaa;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            gap: 40px;
+            background: linear-gradient(135deg, #0d0d0d, #161616);
+            position: relative;
+        }
+        .hero-text h1 {
+            font-size: 55px;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+        .hero-text p {
+            max-width: 450px;
+            color: #cfcfcf;
+            margin-top: 20px;
+        }
+        .btn {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 12px 25px;
+            border: 2px solid #eee;
+            color: #eee;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #eee;
+            color: #111;
+        }
+
+        /* FOTO PROFIL */
+        .profile-wrapper {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #444;
+            box-shadow: 0 0 25px rgba(255,255,255,0.05);
+            transition: 0.4s;
+        }
+        .profile-wrapper:hover {
+            transform: scale(1.05);
+            border-color: #777;
+        }
+        .profile-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 90px 60px;
+            border-top: 1px solid #222;
+        }
+        h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        /* PROJECT GRID */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: linear-gradient(145deg, #1b1b1b, #131313);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #2b2b2b;
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: #777;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #2b2b2b;
+            color: #777;
+            margin-top: 40px;
+        }
+            /* Decorative furniture */
+        .circle-decor {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.03);
+            top: 10%;
+            right: 8%;
+            filter: blur(2px);
+        }
+        .line-decor {
+            position: absolute;
+            width: 2px;
+            height: 180px;
+            background: rgba(255,255,255,0.07);
+            bottom: 12%;
+            left: 50px;
+        }
+
+                /* Diagonal Decor */
+        .diagonal-decor {
+            position: absolute;
+            width: 2px;
+            height: 450px;
+            background: rgba(255,255,255,0.05);
+            top: -50px;
+            right: 120px;
+            transform: rotate(35deg);
+        }
+
+                /* Background semesta samar-samar */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.55);
+            z-index: -1;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: none;
+            z-index: -1;
+        }
+        </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <header>
+        <div class="logo">PORTFOLIO</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="circle-decor"></div>
+        <div class="line-decor"></div>
+        <div class="diagonal-decor"></div>
+        <div class="circle-decor"></div>
+        <div class="line-decor"></div>
+        <div class="hero-text">
+            <h1>Halo, Saya <br> <span style="color:#bbb">Ahsan Maulana</span></h1>
+            <p>Seorang mahasiswa dengan mimpi besar menjadi animator profesional, menciptakan karya visual yang hidup dan penuh emosi.</p>
+            <a href="#projects" class="btn">Lihat Project</a>
+        </div>
+
+        <div class="profile-wrapper">
+            <img src="/intro-bg.jpg" alt="Foto Profil">
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2>Tentang Saya</h2>
+        <p>Saya memiliki hobi bermain game dan menulis cerita. Namun, tujuan utama saya adalah membuat visual animasi dan karya grafik modern yang mampu menyampaikan perasaan dan makna mendalam.</p>
+    </section>
+
+    <section class="section" id="skills">
+        <h2>Keahlian</h2>
+        <div class="projects">
+            <div class="card">sepak bola</div>
+            <div class="card">fps shoter</div>
+            <div class="card">Penulisan Cerita</div>
+            <div class="card">Editing</div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <h2>Kontak</h2>
+        <p>Email: ahsanmosvir@mail.com</p>
+        <p>Instagram: @ahsanm28</p>
+    </section>
+
+    <footer>
+        © 2025 Portfolio Monokrom — Dibuat dengan HTML & CSS
+    </footer>
+</body>
+</html>
