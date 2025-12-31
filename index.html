@@ -1,259 +1,285 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Monochrome Elegant</title>
-    <style>
-        body {
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio - Monochrome Elegant</title>
+
+<style>
+/* ===== GLOBAL ===== */
+body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     color: white;
-    /* BACKGROUND GALAXY */
-    background-image: url('galaxy.jpg'); /* ganti sesuai nama file */
+    background-image: url('galaxy.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
-        header {
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #2b2b2b;
-            backdrop-filter: blur(6px);
-            position: sticky;
-            top: 0;
-            background: rgba(0,0,0,0.4);
-        }
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            letter-spacing: 3px;
-        }
-        nav a {
-            margin-left: 20px;
-            color: #eee;
-            text-decoration: none;
-            transition: 0.3s;
-            font-weight: 300;
-        }
-        nav a:hover {
-            color: #aaa;
-        }
 
-        /* HERO */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 60px;
-            gap: 40px;
-            background: linear-gradient(135deg, #0d0d0d, #161616);
-            position: relative;
-        }
-        .hero-text h1 {
-            font-size: 55px;
-            margin: 0;
-            letter-spacing: 1px;
-        }
-        .hero-text p {
-            max-width: 450px;
-            color: #cfcfcf;
-            margin-top: 20px;
-        }
-        .btn {
-            margin-top: 30px;
-            display: inline-block;
-            padding: 12px 25px;
-            border: 2px solid #eee;
-            color: #eee;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background: #eee;
-            color: #111;
-        }
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: -1;
+}
 
-        /* FOTO PROFIL */
-        .profile-wrapper {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid #444;
-            box-shadow: 0 0 25px rgba(255,255,255,0.05);
-            transition: 0.4s;
-        }
-        .profile-wrapper:hover {
-            transform: scale(1.05);
-            border-color: #777;
-        }
-        .profile-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+/* ===== HEADER ===== */
+header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #2b2b2b;
+    z-index: 999;
+}
 
-        /* SECTIONS */
-        .section {
-            padding: 90px 60px;
-            border-top: 1px solid #222;
-        }
-        h2 {
-            font-size: 36px;
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
 
-        /* PROJECT GRID */
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-        }
-        .card {
-            background: linear-gradient(145deg, #1b1b1b, #131313);
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #2b2b2b;
-            transition: 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-7px);
-            border-color: #777;
-        }
+nav {
+    display: flex;
+    align-items: center;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid #2b2b2b;
-            color: #777;
-            margin-top: 40px;
-        }
-            /* Decorative furniture */
-        .circle-decor {
-            position: absolute;
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.03);
-            top: 10%;
-            right: 8%;
-            filter: blur(2px);
-        }
-        .line-decor {
-            position: absolute;
-            width: 2px;
-            height: 180px;
-            background: rgba(255,255,255,0.07);
-            bottom: 12%;
-            left: 50px;
-        }
+nav a {
+    margin-left: 20px;
+    color: #eee;
+    text-decoration: none;
+    font-weight: 300;
+    transition: 0.3s;
+}
 
-                /* Diagonal Decor */
-        .diagonal-decor {
-            position: absolute;
-            width: 2px;
-            height: 450px;
-            background: rgba(255,255,255,0.05);
-            top: -50px;
-            right: 120px;
-            transform: rotate(35deg);
-        }
+nav a:hover {
+    color: #aaa;
+}
 
-                /* Background semesta samar-samar */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.55);
-            z-index: -1;
-        }
+/* ===== DROPDOWN ===== */
+.dropdown {
+    position: relative;
+    margin-left: 20px;
+}
 
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            background: none;
-            z-index: -1;
-        }
-        </style>
+/* 🔑 INI YANG KEMARIN KURANG */
+.dropbtn {
+    background: none;
+    border: none;
+    color: #eee;
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+}
+
+.dropbtn:hover {
+    color: #aaa;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background: rgba(20,20,20,0.97);
+    min-width: 230px;
+    border-radius: 10px;
+    border: 1px solid #2b2b2b;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 14px 18px;
+    color: #eee;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background: #eee;
+    color: #111;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+/* ===== HERO ===== */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    gap: 40px;
+    background: linear-gradient(135deg, #0d0d0d, #161616);
+}
+
+.hero-text h1 {
+    font-size: 55px;
+    margin: 0;
+}
+
+.hero-text p {
+    max-width: 450px;
+    color: #cfcfcf;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 25px;
+    border: 2px solid #eee;
+    color: #eee;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #eee;
+    color: #111;
+}
+
+/* ===== FOTO ===== */
+.profile-wrapper {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #444;
+}
+
+.profile-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== SECTION ===== */
+.section {
+    padding: 90px 60px;
+    border-top: 1px solid #222;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+/* ===== GRID ===== */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: linear-gradient(145deg, #1b1b1b, #131313);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #2b2b2b;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #777;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #2b2b2b;
+    color: #777;
+}
+</style>
 </head>
+
 <body>
-    <div class="stars"></div>
-    <header>
-        <div class="logo">PORTFOLIO</div>
-        <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
 
-    <div class="dropdown">
-        <a href="#" class="dropbtn">Kumpulan Tugas</a>
-        <div class="dropdown-content">
-            <a href="praktikum/pertemuan1.html">Praktikum Pertemuan 1</a>
-            <a href="praktikum/pertemuan2.html">Praktikum Pertemuan 2</a>
-            <a href="praktikum/pertemuan3.html">Praktikum Pertemuan 3</a>
+<header>
+    <div class="logo">PORTFOLIO</div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+
+        <div class="dropdown">
+            <button class="dropbtn" id="toggleDropdown">Kumpulan Tugas ▾</button>
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="praktikum/pertemuan1.html">Praktikum Pertemuan 1</a>
+                <a href="praktikum/pertemuan2.html">Praktikum Pertemuan 2</a>
+                <a href="praktikum/pertemuan3.html">Praktikum Pertemuan 3</a>
+            </div>
         </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Halo, Saya<br><span style="color:#bbb">Ahsan Maulana</span></h1>
+        <p>Mahasiswa dengan mimpi besar menjadi animator profesional.</p>
+        <a href="#skills" class="btn">Lihat Keahlian</a>
     </div>
-</nav>
-    </header>
 
-    <section class="hero">
-        <div class="circle-decor"></div>
-        <div class="line-decor"></div>
-        <div class="diagonal-decor"></div>
-        <div class="circle-decor"></div>
-        <div class="line-decor"></div>
-        <div class="hero-text">
-            <h1>Halo, Saya <br> <span style="color:#bbb">Ahsan Maulana</span></h1>
-            <p>Seorang mahasiswa dengan mimpi besar menjadi animator profesional, menciptakan karya visual yang hidup dan penuh emosi.</p>
-            <a href="#projects" class="btn">Lihat Project</a>
-        </div>
+    <div class="profile-wrapper">
+        <img src="intro-bg.jpg" alt="Foto Profil">
+    </div>
+</section>
 
-        <div class="profile-wrapper">
-            <img src="intro-bg.jpg" alt="Foto Profil">
-        </div>
-    </section>
+<section class="section" id="about">
+    <h2>Tentang Saya</h2>
+    <p>Saya memiliki hobi bermain game dan menulis cerita. Tujuan utama saya adalah menciptakan karya visual dan animasi modern yang memiliki makna.</p>
+</section>
 
-    <section class="section" id="about">
-        <h2>Tentang Saya</h2>
-        <p>Saya memiliki hobi bermain game dan menulis cerita. Namun, tujuan utama saya adalah membuat visual animasi dan karya grafik modern yang mampu menyampaikan perasaan dan makna mendalam.</p>
-    </section>
+<section class="section" id="skills">
+    <h2>Keahlian</h2>
+    <div class="projects">
+        <div class="card">Sepak Bola</div>
+        <div class="card">FPS Shooter</div>
+        <div class="card">Penulisan Cerita</div>
+        <div class="card">Editing</div>
+    </div>
+</section>
 
-    <section class="section" id="skills">
-        <h2>Keahlian</h2>
-        <div class="projects">
-            <div class="card">sepak bola</div>
-            <div class="card">fps shoter</div>
-            <div class="card">Penulisan Cerita</div>
-            <div class="card">Editing</div>
-        </div>
-    </section>
+<section class="section" id="contact">
+    <h2>Kontak</h2>
+    <p>Email: ahsanmosvir@mail.com</p>
+    <p>Instagram: @ahsanm28</p>
+</section>
 
-    <section class="section" id="contact">
-        <h2>Kontak</h2>
-        <p>Email: ahsanmosvir@mail.com</p>
-        <p>Instagram: @ahsanm28</p>
-    </section>
+<footer>
+    © 2025 Portfolio Monokrom — Dibuat dengan HTML & CSS
+</footer>
 
-    <footer>
-        © 2025 Portfolio Monokrom — Dibuat dengan HTML & CSS
-    </footer>
+<!-- 🔥 JAVASCRIPT DROPDOWN -->
+<script>
+const toggleBtn = document.getElementById("toggleDropdown");
+const dropdown = document.getElementById("dropdownMenu");
+
+toggleBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    dropdown.classList.toggle("show");
+});
+
+document.addEventListener("click", function () {
+    dropdown.classList.remove("show");
+});
+</script>
+
 </body>
 </html>
-
-
-
-
